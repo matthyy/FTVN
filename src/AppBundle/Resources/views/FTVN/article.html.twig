@@ -1,0 +1,17 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<h1>Mon article : {{ article.title }}</h1>
+				<div class="row">
+					<p>Article n°{{ article.id}}</p>
+						<p><span>{{ article.title}} [ par {{ article.createdBy}} le {{ article.createdAt | date('d/m/Y')}} ]</span></p>	
+						<p>Caption : {{ article.leadingg}}</p>
+						<p>Body :{{ article.body}} </p>
+						<p><a href="{{path('supprimer_article', {'id': article.id })}}">Supprimer l'article</a></p>
+							<hr>
+				</div>
+		</div>
+	</div>	
+{% endblock %}

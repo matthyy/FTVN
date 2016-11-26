@@ -1,0 +1,23 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<h1>Ajouter un article</h1>
+			<div class="row">
+				{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+				{{ form_row(form.title, {'attr': {'class': 'form-control'}}) }}
+				{{ form_row(form.leadingg, {'attr': {'class': 'form-control'}}) }}
+				{{ form_row(form.body, {'attr': {'class': 'form-control'}}) }}
+				{{ form_row(form.createdBy, {'attr': {'class': 'form-control'}}) }}
+		
+				<button class="btn btn-primary">Submit</button>
+				{{ form_end(form)}}
+			</div>
+		</div>
+		<div class="row" style="padding-top: 1em;">
+			<a class="btn btn-default btn-primary" href="{{ path('home') }}">Retourner à la lsite des article</a>
+			<a class="btn btn-default btn-primary" id="ajouter-bouton" href="{{ path('create_article') }}">Ajouter un article</a>
+		</div>
+	</div>	
+{% endblock %}
